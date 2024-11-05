@@ -99,3 +99,44 @@ p {
     
     
 }
+
+#cartContainer {
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f1f4f5;
+}
+
+#cart {
+    background-color: white; 
+    margin: 100px;
+    padding: 50px 100px;
+    width: 50em;
+
+}
+#line1, #line2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font: black;
+    text-align: center;
+    line-height: 4;
+}
+
+#bookingContainer {
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f1f4f5;
+}
+
+#booking {
+    background-color: white; 
+    margin: 100px;
+    padding: 50px 100px;
+    width: 50em;
+}
