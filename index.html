@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tickethack</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-        <h1>Tickethack</h1>
+      <nav>
+        <a id="home" href="index.html"><h1>Tickethack</h1></a>
+
         <div class="nav">
-        <h4>Cart</h4>
-        <h4>Bookings</h4>
+          <a id="cart" href="cart.html"><h4>Cart</h4></a>
+          <a id="Bookings" href="bookings.html"><h4>Bookings</h4></a>
         </div>
-        </nav>
+      </nav>
     </header>
     <main>
-        <div id="main">
-            <div class="text">
-            <h3>Explore the world effortlessly by train!</h3>
-            <p>Compare,book and enjoy cheap prices for train tickets: your journey starts on Tickethack</p>
+      <div id="main">
+        <div class="text">
+          <h3>Explore the world effortlessly by train!</h3>
+          <h6>
+            Compare,book and enjoy cheap prices for train tickets: your journey
+            starts on Tickethack
+          </h6>
+        </div>
+        <div id="card">
+          <div class="card1">
+            <div class="search">
+              <input type="text" name="departure" placeholder="Departure" />
+              <input type="text" name="arrival" placeholder="Arrival" />
             </div>
-            <div id="card">
-                <div class="card1"></div>
-                <div class="card2"></div>
+            <div class="date">
+              <input
+                type="date"
+                name="date"
+                value="date"
+                placeholder="Choissisez une date"
+                style="text-transform: uppercase" />
+            </div>
+            <div class="button">
+              <button id="button">Search</button>
+            </div>
+          </div>
+          <div class="card2">
+            <img src="images/train.png" alt="Train" class="train-image"> 
+            <div class="divider"></div> 
+            <div class="result">
+                <p>It's time to book your future trip</p>
             </div>
         </div>
-
-
-
-
-
-
-
-
+        </div>
+      </div>
     </main>
-    
-</body>
+  </body>
 </html>
