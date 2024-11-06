@@ -408,6 +408,11 @@ footer {
 
 
 @media (max-width: 768px) {
+
+    input[type="date"] {
+        font-size: 1.4em; 
+        padding: 12px;
+    }
     header {
         padding: 5px;
     }
