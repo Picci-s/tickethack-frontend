@@ -27,11 +27,36 @@ button.addEventListener('click', function () {
                     content += `
                         <div class="resultSearch">
                             <p>${trip.departure} > ${trip.arrival} <span><span>${trip.time} </span><span>${trip.price}€</span></span></p>
-                            <button class="buttonBook">Book</button>
+                            <button class="buttonBook" 
+                                    data-departure="${trip.departure}" 
+                                    data-arrival="${trip.arrival}" 
+                                    data-time="${trip.time}" 
+                                    data-price="${trip.price}">Book</button>
                         </div>
                     `;
                 });
                 card2.innerHTML = content;
+
+                let bookButtons = document.querySelectorAll('.buttonBook');
+                bookButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        let selectedTrip = {
+                            departure: this.getAttribute('data-departure'),
+                            arrival: this.getAttribute('data-arrival'),
+                            time: this.getAttribute('data-time'),
+                            price: this.getAttribute('data-price')
+                        };
+
+                        console.log('Voyage sélectionné:', selectedTrip);
+
+                        let trips = JSON.parse(localStorage.getItem('trips')) || [];
+                        trips.push(selectedTrip);
+                        
+                        localStorage.setItem('trips', JSON.stringify(trips));
+
+                        window.location.href = '/cart'; 
+                    });
+                });
 
                 } else {
                     card2.innerHTML = ` <img src="images/notfound.png" alt="Train" class="train-image" />
