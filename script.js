@@ -25,8 +25,8 @@ button.addEventListener('click', function () {
                 let content = '';  
                 data.trips.forEach(trip => {
                     content += `
-                        <div>
-                            <p>${trip.departure} > ${trip.arrival} ${trip.time} ${trip.price} euros</p>
+                        <div class="resultSearch">
+                            <p>${trip.departure} > ${trip.arrival} <span><span>${trip.time} </span><span>${trip.price}€</span></span></p>
                             <button class="buttonBook">Book</button>
                         </div>
                     `;
