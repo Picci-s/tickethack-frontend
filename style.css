@@ -1,6 +1,7 @@
 body {
     margin: 0;
-    height: 100vh
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 header {
@@ -214,7 +215,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f1f4f5;
+    background-color: #eff1f6;
 }
 
 #cart {
@@ -227,6 +228,8 @@ a{
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
+    overflow-y: auto;
+    
 }
 
 #line1, #line2 {
@@ -243,14 +246,20 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#f1f4f5;
+    background-color:#eff1f6 ;
 }
 
 #booking {
-    background-color: white; 
+    background-color: white;
     margin: 100px;
-    padding: 50px 100px;
-    width: 50em;
+    width: 51vw; 
+    height: 30vh; 
+    border-radius: 8px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    overflow-y: auto;
 }
 
 .resultSearch {
@@ -309,6 +318,7 @@ span:first-child {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin-left: 20px;
+
 }
 
 .total {
@@ -352,5 +362,47 @@ span:first-child {
 .span, .span1{
    margin-left: 140px;
 
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.trait {
+    border: 1px solid lightslategray;
+    width: 30%; 
+    margin-top: 50px;
+}
+
+.enjoy {
+    color: #41a392;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: auto;
+}
+
+#clearBookings {
+    width: 30%;
+    background-color: #41a392;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
