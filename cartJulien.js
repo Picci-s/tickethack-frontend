@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.target.parentElement.remove();
 
           
-            fetch(`http://localhost:3000/deleteTrips/${tripId}`, {
+            fetch(`https://tickethack-backend-omega.vercel.app/deleteTrips/${tripId}`, {
                 method: "DELETE",
             })
                 .then((response) => response.json())

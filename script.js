@@ -13,7 +13,7 @@ button.addEventListener('click', function () {
     }
     let formattedDate = moment(date).format('DD/MM/YYYY')
 
-    fetch('http://localhost:3000/trips/generatetrips', {
+    fetch('https://tickethack-backend-omega.vercel.app/trips/generatetrips', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ departure, arrival, date:formattedDate })
