@@ -27,7 +27,11 @@ button.addEventListener('click', function () {
                     content += `
                         <div class="resultSearch">
                             <p>${trip.departure} > ${trip.arrival} <span><span>${trip.time} </span><span>${trip.price}€</span></span></p>
-                            <button class="buttonBook">Book</button>
+                            <button class="buttonBook" 
+                                    data-departure="${trip.departure}" 
+                                    data-arrival="${trip.arrival}" 
+                                    data-time="${trip.time}" 
+                                    data-price="${trip.price}">Book</button>
                         </div>
                     `;
                 });
@@ -36,7 +40,6 @@ button.addEventListener('click', function () {
                 let bookButtons = document.querySelectorAll('.buttonBook');
                 bookButtons.forEach(button => {
                     button.addEventListener('click', function() {
-                        // Récupère les informations du voyage depuis les attributs de données
                         let selectedTrip = {
                             departure: this.getAttribute('data-departure'),
                             arrival: this.getAttribute('data-arrival'),
@@ -44,17 +47,14 @@ button.addEventListener('click', function () {
                             price: this.getAttribute('data-price')
                         };
 
-                        // Récupère les voyages existants dans le localStorage ou crée un tableau vide
+                        console.log('Voyage sélectionné:', selectedTrip);
+
                         let trips = JSON.parse(localStorage.getItem('trips')) || [];
-                        
-                        // Ajoute le voyage sélectionné
                         trips.push(selectedTrip);
                         
-                        // Stocke de nouveau dans le localStorage
                         localStorage.setItem('trips', JSON.stringify(trips));
 
-                        // Redirige vers la page du panier
-                        window.location.href = '/cart'; // Remplace par le bon chemin si nécessaire
+                        window.location.href = 'cart.html'; 
                     });
                 });
 
