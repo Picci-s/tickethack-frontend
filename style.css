@@ -408,11 +408,6 @@ footer {
 
 
 @media (max-width: 768px) {
-
-    input[type="date"] {
-        font-size: 1.4em; 
-        padding: 12px;
-    }
     header {
         padding: 5px;
     }
@@ -485,16 +480,5 @@ footer {
     footer {
         flex-direction: column;
         padding: 10px;
-    }
-}
-
-
-@media (min-width: 1400px) {
-    body {
-        font-size: 18px; 
-    }
-
-    .card1, .card2 {
-        width: 45%; 
     }
 }

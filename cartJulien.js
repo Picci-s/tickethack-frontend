@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let trips = JSON.parse(localStorage.getItem("trips")) || [];
     let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
-    
     function updateCart() {
         let content1 = "";
         content1 += `<h2>My Cart</h2>`
@@ -36,31 +35,35 @@ document.addEventListener("DOMContentLoaded", function () {
     
     updateCart();
 
-   
+    
     cartContainer.addEventListener("click", function (e) {
         if (e.target && e.target.classList.contains("deleteButton")) {
             const tripId = e.target.getAttribute("data-id");
+            console.log("TripId to delete:", tripId);
 
             
             trips = trips.filter(trip => trip._id !== tripId); 
-            localStorage.setItem("trips", JSON.stringify(trips));
 
             
-            e.target.parentElement.remove();
+            localStorage.setItem("trips", JSON.stringify(trips));
 
-          
+        
+            const tripElement = e.target.parentElement;
+            tripElement.remove();
+
+           
             fetch(`https://tickethack-backend-omega.vercel.app/deleteTrips/${tripId}`, {
                 method: "DELETE",
             })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data.message);
-                })
-                .catch((error) => {
-                    console.error("Error deleting trip:", error);
-                });
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data.message);
+            })
+            .catch((error) => {
+                console.error("Error deleting trip:", error);
+            });
 
-            
+           
             updateCart();
         }
     });
@@ -69,16 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
     cartContainer.addEventListener("click", function (e) {
         if (e.target && e.target.classList.contains("purchase")) {
             if (trips.length > 0) {
-                
+             
                 bookings = bookings.concat(trips);
 
                 
                 localStorage.setItem("bookings", JSON.stringify(bookings));
-
-               
                 localStorage.setItem("trips", JSON.stringify([]));
 
-              
+                
                 updateCart();
 
                 
