@@ -33,6 +33,31 @@ button.addEventListener('click', function () {
                 });
                 card2.innerHTML = content;
 
+                let bookButtons = document.querySelectorAll('.buttonBook');
+                bookButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Récupère les informations du voyage depuis les attributs de données
+                        let selectedTrip = {
+                            departure: this.getAttribute('data-departure'),
+                            arrival: this.getAttribute('data-arrival'),
+                            time: this.getAttribute('data-time'),
+                            price: this.getAttribute('data-price')
+                        };
+
+                        // Récupère les voyages existants dans le localStorage ou crée un tableau vide
+                        let trips = JSON.parse(localStorage.getItem('trips')) || [];
+                        
+                        // Ajoute le voyage sélectionné
+                        trips.push(selectedTrip);
+                        
+                        // Stocke de nouveau dans le localStorage
+                        localStorage.setItem('trips', JSON.stringify(trips));
+
+                        // Redirige vers la page du panier
+                        window.location.href = '/cart'; // Remplace par le bon chemin si nécessaire
+                    });
+                });
+
                 } else {
                     card2.innerHTML = ` <img src="images/notfound.png" alt="Train" class="train-image" />
             <div class="divider"></div>
