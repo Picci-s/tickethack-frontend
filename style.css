@@ -181,6 +181,7 @@ a{
     padding: 20px; 
     margin: 40px; 
     position: relative; 
+    overflow: scroll;
 }
 
 .train-image {

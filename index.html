@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tickethack</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
   </head>
   <body>
     <header>
       <nav>
         <a id="home" href="index.html"><h1>Tickethack</h1></a>
         <div class="nav">
-        <a id="cart1" href="cart.html"><h4>Cart</h4></a>
-        <a id="booking1" href="bookings.html"><h4>Bookings</h4></a>
+          <a id="cart1" href="cart.html"><h4>Cart</h4></a>
+          <a id="booking1" href="bookings.html"><h4>Bookings</h4></a>
         </div>
       </nav>
     </header>
@@ -28,11 +29,20 @@
         <div id="card">
           <div class="card1">
             <div class="search">
-              <input type="text" name="departure" placeholder="Departure" />
-              <input type="text" name="arrival" placeholder="Arrival" />
+              <input
+                id="departure"
+                type="text"
+                name="departure"
+                placeholder="Departure" />
+              <input
+                id="arrival"
+                type="text"
+                name="arrival"
+                placeholder="Arrival" />
             </div>
             <div class="date">
               <input
+                id="date"
                 type="date"
                 name="date"
                 value="date"
@@ -44,14 +54,15 @@
             </div>
           </div>
           <div class="card2">
-            <img src="images/train.png" alt="Train" class="train-image"> 
-            <div class="divider"></div> 
+            <img src="images/train.png" alt="Train" class="train-image" />
+            <div class="divider"></div>
             <div class="result">
-                <p>It's time to book your future trip</p>
+              <p>It's time to book your future trip</p>
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
