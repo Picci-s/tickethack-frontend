@@ -54,7 +54,7 @@ button.addEventListener('click', function () {
                         
                         localStorage.setItem('trips', JSON.stringify(trips));
 
-                        window.location.href = '/cart'; 
+                        window.location.href = 'cart.html'; 
                     });
                 });
 
